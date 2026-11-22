@@ -170,7 +170,7 @@ async function savePhoto(ev, id, el, fallbackHref) {
   if (!el._label) el._label = el.innerHTML;
   try {
     if (!photoCache.has(id)) {
-      el.dataset.busy = '1'; el.textContent = 'Photo taiyar ho rahi hai...';
+      el.dataset.busy = '1'; el.textContent = 'Downloading';
       const file = await fetchPhoto(id);
       delete el.dataset.busy;
       if (IS_IOS) { el.textContent = 'Taiyar! Save karne ke liye dobara dabao'; return; }
